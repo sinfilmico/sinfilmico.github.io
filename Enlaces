@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Agustín | Enlaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-sage: #9ec5b5;
+            --pill-black: #0c0d0c;
+            --pill-hover: #1c1e1c;
+            --text-dark: #0a0a0a;
+            --text-white: #ffffff;
+            --text-muted: #9aa09d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-sage);
+            /* Textura sutil similar al fondo de la captura */
+            background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+            background-size: 16px 16px;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 3.5rem 1.25rem 4rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Foto de Perfil */
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #141414;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.35rem;
+            text-align: center;
+        }
+
+        .location {
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-bottom: 1.15rem;
+            color: #1a1e1c;
+        }
+
+        /* Íconos Sociales (X e Instagram) */
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icons a {
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            opacity: 0.75;
+        }
+
+        .social-icons svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Lista de Botones / Enlaces */
+        .links-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .link-pill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--pill-black);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 0.65rem 0.85rem;
+            border-radius: 16px;
+            min-height: 68px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .link-pill:hover {
+            background-color: var(--pill-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+        }
+
+        /* Miniaturas izquierdas de cada botón */
+        .thumb {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-weight: 700;
+        }
+
+        .thumb-emp {
+            background-color: #ffffff;
+            color: #0c0d0c;
+            font-size: 0.55rem;
+            line-height: 1.05;
+            text-align: center;
+            padding: 4px;
+            letter-spacing: -0.3px;
+            font-weight: 800;
+        }
+
+        .thumb-ced {
+            background: linear-gradient(135deg, #cfd6d2 0%, #aeb8b3 100%);
+            color: #1c221f;
+            font-size: 0.52rem;
+            line-height: 1.1;
+            text-align: center;
+            padding: 4px;
+            font-family: Georgia, serif;
+            letter-spacing: 0.5px;
+        }
+
+        .thumb-eth {
+            background: radial-gradient(circle, #333836 0%, #050505 85%);
+            color: #d8dedb;
+            font-size: 0.5rem;
+            text-align: center;
+            border: 1px solid #222;
+        }
+
+        .thumb-mm {
+            background-color: #26292e;
+            flex-direction: column;
+            padding: 5px;
+            gap: 3px;
+        }
+
+        .mm-text {
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .mm-bars {
+            display: flex;
+            width: 100%;
+            height: 16px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .mm-bars span { flex: 1; }
+
+        .thumb-lb {
+            background-color: #2c3440;
+            gap: 3px;
+        }
+
+        .lb-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        /* Texto Central de los Botones */
+        .link-text {
+            flex-grow: 1;
+            text-align: center;
+            padding: 0 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-title {
+            font-size: 0.98rem;
+            font-weight: 600;
+            letter-spacing: 0.1px;
+        }
+
+        .link-subtitle {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Tres puntos a la derecha */
+        .dots {
+            width: 24px;
+            color: #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- Foto de Perfil: Si subes tu foto a GitHub con el nombre avatar.jpg, se verá automáticamente -->
+        <img src="avatar.jpg" onerror="this.src='https://ui-avatars.com/api/?name=JA&background=141414&color=ffffff&size=200'" alt="José Agustín" class="avatar">
+
+        <h1>José Agustín</h1>
+        <div class="location">
+            <span>📍</span> Argentina
+        </div>
+
+        <!-- Redes Sociales (X e Instagram) -->
+        <div class="social-icons">
+            <a href="https://x.com/sinfilmico" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://instagram.com/sinfilmico" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </div>
+
+        <!-- Botones Principales -->
+        <div class="links-list">
+            
+            <!-- 1. El Mundo Perdido -->
+            <a href="https://elmundoperdidocine.com/" target="_blank" rel="noopener" class="link-pill">
+                <div class="thumb thumb-emp">EL<br>MUNDO<br>PERDIDO</div>
+                <div class="link-text">
+                    <span class="link-title">El Mundo Perdido</span>
+                </div>
+                <div class="dots">⋮</div>
+            </a>
+
+            <!-- 2. Cine en disputa -->
+            <a href="https://open.spotify.com/show/4piYnqfpdNiVnYIcTA7HNj?si=259c43cb03a54bf9" target="_blank" rel="noopener" class="link-pill">
+                <div class="thumb thumb-ced">CINE<br>EN<br>DISPUTA</div>
+                <div class="link-text">
+                    <span class="link-title">Cine en disputa</span>
+                    <span class="link-subtitle">🎙️ Podcast · El Mundo Perdido</span>
+                </div>
+                <div class="dots">⋮</div>
+            </a>
+
+            <!-- 3. El Tercer Hombre | Substack -->
+            <a href="https://eltercerhombre.substack.com/" target="_blank" rel="noopener" class="link-pill">
+                <div class="thumb thumb-eth">III</div>
+                <div class="link-text">
+                    <span class="link-title">EL TERCER HOMBRE | Substack</span>
+                </div>
+                <div class="dots">⋮</div>
+            </a>
+
+            <!-- 4. Millimetre -->
+            <a href="https://www.millimetre.app/user/sinfilmico" target="_blank" rel="noopener" class="link-pill">
+                <div class="thumb thumb-mm">
+                    <div class="mm-text">mm●</div>
+                    <div class="mm-bars">
+                        <span style="background:#e03a3e"></span>
+                        <span style="background:#f5821f"></span>
+                        <span style="background:#fdb827"></span>
+                        <span style="background:#eee"></span>
+                    </div>
+                </div>
+                <div class="link-text">
+                    <span class="link-title">Millimetre</span>
+                </div>
+                <div class="dots">⋮</div>
+            </a>
+
+            <!-- 5. Letterboxd -->
+            <a href="https://letterboxd.com/sinfilmico/" target="_blank" rel="noopener" class="link-pill">
+                <div class="thumb thumb-lb">
+                    <span class="lb-dot" style="background:#ff8000"></span>
+                    <span class="lb-dot" style="background:#00e054"></span>
+                    <span class="lb-dot" style="background:#40bcf4"></span>
+                </div>
+                <div class="link-text">
+                    <span class="link-title">Letterboxd</span>
+                </div>
+                <div class="dots">⋮</div>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>
